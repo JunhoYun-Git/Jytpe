@@ -1,16 +1,10 @@
 # Building Custom Vector Memory Databases with the BaseVectorDatabase Class
 
-In the age of large language models (LLMs) and AI-powered applications, efficient memory management has become a crucial component. Vector databases, which store and retrieve data in high-dimensional vector spaces, have emerged as powerful tools for handling the vast amounts of data generated and consumed by AI systems. However, integrating vector databases into your applications can be a daunting task, requiring in-depth knowledge of their underlying architectures and APIs.
-
-Enter the `BaseVectorDatabase` class, a powerful abstraction layer designed to simplify the process of creating and integrating custom vector memory databases into your AI applications. By inheriting from this class, developers can build tailored vector database solutions that seamlessly integrate with their existing systems, enabling efficient storage, retrieval, and manipulation of high-dimensional data.
-
-In this comprehensive guide, we'll explore the `BaseVectorDatabase` class in detail, covering its core functionality and diving deep into the process of creating custom vector memory databases using popular solutions like PostgreSQL, Pinecone, Chroma, FAISS, and more. Whether you're a seasoned AI developer or just starting to explore the world of vector databases, this guide will provide you with the knowledge and tools necessary to build robust, scalable, and efficient memory solutions for your AI applications.
+Vector databases are powerful tools that store and retrieve data in high-dimensional vector spaces, and are the best way to handle the vast amounts of data generated and consumed by AI systems. The `BaseVectorDatabase` class is a powerful abstraction layer that simplifies the process of creating and integrating custom vector memory databases from high-dimensional data into your AI applications. Here we cover the functionality of the `BaseVectorDatabase` class, including core functionality and creating custom vector memory databases using popular solutions like PostgreSQL, Pinecone, Chroma, FAISS, and more. 
 
 ## Understanding the BaseVectorDatabase Class
 
-Before we dive into the implementation details, let's take a closer look at the `BaseVectorDatabase` class and its core functionality.
-
-The `BaseVectorDatabase` class is an abstract base class that defines the interface for interacting with a vector database. It serves as a blueprint for creating concrete implementations of vector databases, ensuring a consistent and standardized approach to database operations across different systems.
+The `BaseVectorDatabase` class defines the interface for interacting with a vector database. It ensures a consistent and standardized approach to database operations across different systems. 
 
 The class provides a set of abstract methods that define the essential functionality required for working with vector databases, such as connecting to the database, executing queries, and performing CRUD (Create, Read, Update, Delete) operations.
 
@@ -37,8 +31,6 @@ Here's a breakdown of the abstract methods defined in the `BaseVectorDatabase` c
 By inheriting from the `BaseVectorDatabase` class and implementing these abstract methods, developers can create concrete vector database implementations tailored to their specific needs and requirements.
 
 ## Creating a Custom Vector Memory Database
-
-Now that we have a solid understanding of the `BaseVectorDatabase` class, let's dive into the process of creating a custom vector memory database by inheriting from this class. Throughout this guide, we'll explore various vector database solutions, including PostgreSQL, Pinecone, Chroma, FAISS, and more, showcasing how to integrate them seamlessly into your AI applications.
 
 ### Step 1: Inherit from the BaseVectorDatabase Class
 
@@ -497,6 +489,8 @@ class FAISSVectorDatabase(MyCustomVectorDatabase):
 Now, how do you integrate a vector datbase with an agent? This is how:
 
 ## Integrate Memory with `Agent`
+
+### Creating an Agent with Memory
 
 ```python
 import os

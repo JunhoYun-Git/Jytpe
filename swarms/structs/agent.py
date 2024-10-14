@@ -194,7 +194,7 @@ class Agent:
         agent_description: Optional[str] = None,
         system_prompt: Optional[str] = AGENT_SYSTEM_PROMPT_3,
         # TODO: Change to callable, then parse the callable to a string
-        tools: List[Callable] = None,
+        tools: Optional[List[Callable]] = None,
         dynamic_temperature_enabled: Optional[bool] = False,
         sop: Optional[str] = None,
         sop_list: Optional[List[str]] = None,

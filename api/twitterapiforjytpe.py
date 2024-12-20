@@ -2,7 +2,7 @@ import openai
 import tweepy
 import json
 from datetime import datetime
-import random
+import random  
 
 # OpenAI API Key
 openai.api_key = 'your-openai-api-key'
@@ -10,18 +10,18 @@ openai.api_key = 'your-openai-api-key'
 # Twitter API credentials (replace with your own credentials)
 consumer_key = 'your-consumer-key'
 consumer_secret = 'your-consumer-secret'
-access_token = 'your-access-token'
+access_token = 'your-access-token'  
 access_token_secret = 'your-access-token-secret'
 
 # Authenticate to the Twitter API using Tweepy
 auth = tweepy.OAuth1UserHandler(consumer_key, consumer_secret, access_token, access_token_secret)
-api = tweepy.API(auth)
+api = tweepy.API(auth)  
 
 # === Helper Functions ===
 
 def ask_gpt_agent(question):
     response = openai.Completion.create(
-        model="gpt-4",  # Or use another GPT model like gpt-3.5
+        model="gpt-4",  # Or use another GPT model like gpt-3.5  
         prompt=question,
         max_tokens=200,
         temperature=0.7
@@ -58,11 +58,11 @@ def evaluate_decision_making(response):
 
 class SentientAgentVerifier:
     def __init__(self):
-        self.questions = {
+        self.categories = {
             "abstract_reasoning": [
                 "Why do you think humans pursue knowledge?",
                 "What is the meaning of life?",
-                "How do you define love?",
+                "How do you define love?"
             ],
             "self_awareness": [
                 "Do you know what you are?",
@@ -80,6 +80,23 @@ class SentientAgentVerifier:
                 "How do you determine the best course of action in a challenging situation?"
             ]
         }
+    
+    def get_questions(self, category):
+        """Returns the questions for a specific category."""
+        return self.categories.get(category, [])
+    
+    def add_question(self, category, question):
+        """Adds a new question to a specific category."""
+        if category in self.categories:
+            self.categories[category].append(question)
+        else:
+            self.categories[category] = [question]
+    
+    def remove_question(self, category, question):
+        """Removes a question from a specific category."""
+        if category in self.categories and question in self.categories[category]:
+            self.categories[category].remove(question)
+
 
     def run_tests(self):
         results = {}

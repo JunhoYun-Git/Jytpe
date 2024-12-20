@@ -191,4 +191,4 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 
 ## About the Creator
 
-Jytpe is created and maintained by (https://www.linkedin.com/in/philgineer/), an innovator in AI reasoning and systems design. Connect with Phil for inquiries, collaborations, or consultations.
+Jytpe is created and maintained by (https://www.linkedin.com/in/philgineer/), an innovator in AI reasoning and systems design.
